@@ -10,6 +10,21 @@ return {
     "AstroNvim/astrocore",
     ---@type AstroCoreOpts
     opts = {
+
+        -- passed to `vim.filetype.add`
+        filetypes = {
+            -- see `:h vim.filetype.add` for usage
+            extension = {
+                f = "filelist",
+            },
+            -- filename = {
+            --     [".foorc"] = "fooscript",
+            -- },
+            -- pattern = {
+            --     [".*/etc/foo/.*"] = "fooscript",
+            -- },
+        },
+
         -- vim options can be configured here
         options = {
             opt = { -- vim.opt.<key>
@@ -49,7 +64,7 @@ return {
             },
             i = {
                 -- delay
-                ["<C-e>"]     =  {" <= #`U_DLY ",desc = "insert delay"},
+                ["<C-e>"] = { " <= #`U_DLY ", desc = "insert delay" },
             },
         },
     },
