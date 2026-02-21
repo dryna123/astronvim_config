@@ -33,4 +33,6 @@ return {
     { import = "astrocommunity.snippet.nvim-snippets" },
     -- ui
     -- { import = "astrocommunity.utility.noice-nvim" },
+    -- vscode
+    { import = "astrocommunity.recipes.vscode" },
 }
