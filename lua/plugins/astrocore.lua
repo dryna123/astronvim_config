@@ -37,6 +37,8 @@ return {
                 softtabstop = 4, -- 编辑操作层面的 Tab / 退格宽度
                 shiftwidth = 4, -- 代码缩进层面的自动缩进宽度
                 expandtab = true, -- 将Tab键输入替换为空格（核心开关)
+                foldmethod = "marker",
+                foldmarker = "BLOCK_BEGIN,BLOCK_END",
             },
             g = { -- vim.g.<key>
                 -- configure global vim variables (vim.g)

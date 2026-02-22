@@ -16,5 +16,16 @@ return {
             -- control auto formatting on save
             format_on_save = false,
         },
+        servers = {"verible"},
+        -- config
+        config = {
+            verible = {
+                cmd = {"/home/dryna/.local/share/nvim/mason/bin/verible-verilog-ls","--rules=-module-filename,-always-comb",},
+                filetypes = {"verilog"},
+                root_markers = function()
+                    return vim.fn.expand("%:p:h")
+                end,
+            }
+        }
     },
 }
