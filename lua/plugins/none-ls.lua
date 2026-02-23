@@ -23,7 +23,7 @@ return {
             --     extra_args = {"-DU_DLY=0.1 ","-timing"}
             -- }),
             null_ls.builtins.formatting.verible_verilog_format.with({
-                extra_args = {"--indentation_spaces=4","--named_port_alignment=align","--wrap_end_else_clauses=true"},
+                extra_args = {"--indentation_spaces=4","--named_port_alignment=align","--wrap_end_else_clauses=true","--port_declarations_alignment=align","--try_wrap_long_lines=true"},
             }),
         })
     end,
