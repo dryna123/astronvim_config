@@ -16,6 +16,7 @@ return {
             -- see `:h vim.filetype.add` for usage
             extension = {
                 f = "filelist",
+                v = "verilog",
             },
             -- filename = {
             --     [".foorc"] = "fooscript",
