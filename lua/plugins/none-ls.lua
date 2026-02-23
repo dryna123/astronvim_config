@@ -18,10 +18,10 @@ return {
             -- Set a formatter
             null_ls.builtins.formatting.stylua,
             -- null_ls.builtins.formatting.prettier,
-            -- null_ls.builtins.diagnostics.verilator.with({
-            --     method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-            --     extra_args = {"-DU_DLY=0.1 ","-timing"}
-            -- }),
+            null_ls.builtins.diagnostics.verilator.with({
+                method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+                extra_args = {"-DU_DLY=0.1 ","-timing"}
+            }),
             null_ls.builtins.formatting.verible_verilog_format.with({
                 extra_args = {"--indentation_spaces=4","--named_port_alignment=align","--wrap_end_else_clauses=true","--port_declarations_alignment=align"},
             }),
