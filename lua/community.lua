@@ -20,6 +20,7 @@ return {
     { import = "astrocommunity.colorscheme.rose-pine" },
     { import = "astrocommunity.colorscheme.nightfox-nvim" },
     { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+    { import = "astrocommunity.colorscheme.sonokai" },
     -- neovide
     { import = "astrocommunity.recipes.neovide" },
     --Default Statusline With Mode Text
