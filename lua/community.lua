@@ -9,7 +9,7 @@ return {
     "AstroNvim/astrocommunity",
     -- pack
     { import = "astrocommunity.pack.lua" },
-    { import = "astrocommunity.pack.verilog" },
+    -- { import = "astrocommunity.pack.verilog" },
     { import = "astrocommunity.pack.toml" },
     -- colorscheme
     { import = "astrocommunity.colorscheme.catppuccin" },
