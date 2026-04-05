@@ -18,28 +18,28 @@ return {
             -- Set a formatter
             null_ls.builtins.formatting.stylua,
             -- null_ls.builtins.formatting.prettier,
-            null_ls.builtins.diagnostics.verilator.with {
-                method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-                -- extra_args = {"-Wno-DECLFILENAME","-DU_DLY=0.1 ","-timing"}
-                args = function()
-                    local filelist_path = "flattened_filelist" -- 建议替换为绝对路径
-                    -- 1. 原生读取文件，捕获错误
-                    local ok, filelist = pcall(vim.fn.readfile, filelist_path)
-                    -- 2. 读取失败则返回仅包含自定义参数的列表（或空列表，按需选择）
-                    if not ok then
-                        -- 可选1：仅返回自定义参数
-                        return { "-timing", "-Wno-DECLFILENAME", "-DU_DLY=0.1", "-lint-only", "-Wno-fatal", "$FILENAME" }
-                        -- 可选2：返回空列表（和你原有逻辑一致）
-                        -- return {}
-                    end
-                    -- 3. 读取成功：合并自定义参数 + filelist 内容
-                    local custom_args = { "-timing", "-Wno-DECLFILENAME", "-DU_DLY=0.1", "-lint-only", "-Wno-fatal" } -- 你的自定义参数
-                    -- 把 filelist 拼接到自定义参数后面（顺序可调整）
-                    local final_args = vim.list_extend(custom_args, filelist)
-                    -- 4. 返回合并后的参数列表
-                    return final_args
-                end,
-            },
+            -- null_ls.builtins.diagnostics.verilator.with {
+            --     method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+            --     -- extra_args = {"-Wno-DECLFILENAME","-DU_DLY=0.1 ","-timing"}
+            --     args = function()
+            --         local filelist_path = "flattened_filelist" -- 建议替换为绝对路径
+            --         -- 1. 原生读取文件，捕获错误
+            --         local ok, filelist = pcall(vim.fn.readfile, filelist_path)
+            --         -- 2. 读取失败则返回仅包含自定义参数的列表（或空列表，按需选择）
+            --         if not ok then
+            --             -- 可选1：仅返回自定义参数
+            --             return { "-timing", "-Wno-DECLFILENAME", "-DU_DLY=0.1", "-lint-only", "-Wno-fatal", "$FILENAME" }
+            --             -- 可选2：返回空列表（和你原有逻辑一致）
+            --             -- return {}
+            --         end
+            --         -- 3. 读取成功：合并自定义参数 + filelist 内容
+            --         local custom_args = { "-timing", "-Wno-DECLFILENAME", "-DU_DLY=0.1", "-lint-only", "-Wno-fatal" } -- 你的自定义参数
+            --         -- 把 filelist 拼接到自定义参数后面（顺序可调整）
+            --         local final_args = vim.list_extend(custom_args, filelist)
+            --         -- 4. 返回合并后的参数列表
+            --         return final_args
+            --     end,
+            -- },
             null_ls.builtins.formatting.verible_verilog_format.with {
                 extra_args = {
                     "--indentation_spaces=4",
