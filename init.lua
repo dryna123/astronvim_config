@@ -26,10 +26,5 @@ end
 require "lazy_setup"
 require "polish"
 
--- vim.opt.rtp:append("/home/dryna/project/example")
---
--- local pkg = require("example")
---
--- pkg.setup({
---   color = "yellow"
--- })
+vim.env.sd ="/home/dryna/project/"
+
