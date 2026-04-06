@@ -1,0 +1,120 @@
+{
+  "always 时序逻辑(低复位)": {
+    "prefix": "alwr",
+    "body": [
+      "always @(posedge clk or negedge rst_n) begin",
+      "  if(!rst_n) begin",
+      "    ${1:reg} <= ${2:'d0};",
+      "  end",
+      "  else begin",
+      "    ${3:// logic}",
+      "  end",
+      "end",
+      ""
+    ],
+    "description": "时序always块，下降沿复位"
+  },
+
+  "always 组合逻辑": {
+    "prefix": "alcom",
+    "body": [
+      "always @(*) begin",
+      "  ${1:assign_logic}",
+      "end",
+      ""
+    ],
+    "description": "Verilog 组合逻辑 always @(*)"
+  },
+
+  "assign 连线": {
+    "prefix": "ass",
+    "body": [
+      "assign ${1:net_out} = ${2:net_in};",
+      ""
+    ],
+    "description": "连续赋值 assign"
+  },
+
+  "parameter 参数定义": {
+    "prefix": "para",
+    "body": [
+      "parameter ${1:PARAM_NAME} = ${2:8};",
+      ""
+    ],
+    "description": "Verilog parameter 常量"
+  },
+
+  "localparam 本地参数": {
+    "prefix": "local",
+    "body": [
+      "localparam ${1:LOCAL_PARAM} = ${2:16};",
+      ""
+    ],
+    "description": "localparam 内部常量"
+  },
+
+  "if else 判断": {
+    "prefix": "ifel",
+    "body": [
+      "if(${1:cond}) begin",
+      "  ${2:// true}",
+      "end else begin",
+      "  ${3:// false}",
+      "end",
+      ""
+    ],
+    "description": "if-else 代码块"
+  },
+
+  "case 选择语句": {
+    "prefix": "case",
+    "body": [
+      "case(${1:sig})",
+      "  ${2:val1}: begin",
+      "    ${3:// logic}",
+      "  end",
+      "  default: begin",
+      "    ${4:// default}",
+      "  end",
+      "endcase",
+      ""
+    ],
+    "description": "case 多路选择"
+  },
+
+  "计数器模板": {
+    "prefix": "cnt",
+    "body": [
+      "always @(posedge clk or negedge rst_n) begin",
+      "  if(!rst_n) begin",
+      "    ${2:cnt} <= ${3:'d0};",
+      "  end else if(${4:cnt}_full) begin",
+      "    ${2:cnt} <= ${3:'d0};",
+      "  end else begin",
+      "    ${2:cnt} <= ${2:cnt} + 1'b1;",
+      "  end",
+      "end",
+      ""
+    ],
+    "description": "常用加法计数器"
+  },
+
+  "脉冲打两拍同步": {
+    "prefix": "sync2",
+    "body": [
+      "reg ${1:sync_ff1}, ${1:sync_ff2};",
+      "",
+      "always @(posedge clk or negedge rst_n) begin",
+      "  if(!rst_n) begin",
+      "    ${1:sync_ff1} <= 1'b0;",
+      "    ${1:sync_ff2} <= 1'b0;",
+      "  end else begin",
+      "    ${1:sync_ff1} <= ${2:async_signal};",
+      "    ${1:sync_ff2} <= ${1:sync_ff1};",
+      "  end",
+      "end",
+      ""
+    ],
+    "description": "异步信号两级打拍同步"
+  }
+}
