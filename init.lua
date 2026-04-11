@@ -25,6 +25,7 @@ end
 
 require "lazy_setup"
 require "polish"
-
 vim.env.sd ="/home/dryna/project/"
+
+
 

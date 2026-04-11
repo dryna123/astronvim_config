@@ -9,6 +9,7 @@ return {
     "AstroNvim/astrocommunity",
     -- pack
     { import = "astrocommunity.pack.lua" },
+    { import = "astrocommunity.editing-support.bigfile-nvim" },
     -- { import = "astrocommunity.pack.verilog" },
     { import = "astrocommunity.pack.toml" },
     -- colorscheme
@@ -22,7 +23,7 @@ return {
     { import = "astrocommunity.colorscheme.gruvbox-nvim" },
     { import = "astrocommunity.colorscheme.sonokai" },
     -- neovide
-    { import = "astrocommunity.recipes.neovide" },
+    -- { import = "astrocommunity.recipes.neovide" },
     --Default Statusline With Mode Text
     { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
     -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
