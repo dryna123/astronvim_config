@@ -33,7 +33,11 @@ return {
     { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
     -- nvim-snippets
     { import = "astrocommunity.snippet.nvim-snippets" },
+    --cache-colorscheme
+    { import = "astrocommunity.recipes.cache-colorscheme" },
     -- ui
+    { import = "astrocommunity.recipes.neo-tree-dark" },
+    { import = "astrocommunity.utility.nvzone-menu" },
     -- { import = "astrocommunity.utility.noice-nvim" },
     -- vscode
     { import = "astrocommunity.recipes.vscode" },
